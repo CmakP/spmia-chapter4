@@ -1,5 +1,7 @@
 spring:
   application:
+#  Application ID - Logical name of thr service that will be registered with Eureka
+#                   Used to represent a group service instance
     name: organizationservice
   profiles:
     active:

@@ -4,9 +4,13 @@ server:
 
 eureka:
   client:
+#  Tells the service not to register with a Eureka service when the Spring Boot Eureka
+#   application starts because this is the Eureka service
     registerWithEureka: false
+#    On service start, don't try and cache registry information locally
     fetchRegistry: false
   server:
+#  Initial time to wait before server takes requests
     waitTimeInMsWhenSyncEmpty: 5
   serviceUrl:
     defaultZone: http://localhost:8761

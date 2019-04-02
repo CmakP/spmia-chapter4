@@ -1,11 +1,18 @@
 
 eureka:
   instance:
+#  Register the IP of the service rather than the server name (host name)
+#  Note that in a container-based deployment like Docker containers will be
+#  started with randomly generated hostnames and NO DNS entries for the containers.
     preferIpAddress: true
   client:
     registerWithEureka: true
+# Pull down a local copy of the registry. This will cache the registry locally
+# instead of calling the Eureka Service with every lookup. Every 30 seconds, the
+# client software will re-connect the Eureka Service for any changes to the registry.
     fetchRegistry: true
     serviceUrl:
+# List of Eureka services client will use to resolve location of the Eureka Service
         defaultZone: http://localhost:8761/eureka/
 
         

@@ -15,6 +15,11 @@ import java.util.List;
 @EnableFeignClients
 public class Application {
 
+  /** To use a Ribbon-aware RestTemplate class, you need to define a Rest-Template bean
+      construction method with a Spring Cloud annotation called @LoadBalanced.
+      In addition, by using the RestTemplate class, Ribbon will round-robin load balance
+      all requests among all the service instances.
+   **/
   @LoadBalanced
   @Bean
   public RestTemplate getRestTemplate(){
